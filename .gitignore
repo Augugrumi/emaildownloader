@@ -1,0 +1,8 @@
+.idea/
+target/
+emaildownloader.iml
+*.iml
+Prova.java
+prova.java*.csv
+csv.csv
+images/*.png
