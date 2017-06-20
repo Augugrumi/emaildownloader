@@ -65,6 +65,7 @@ public class Main {
 
         if (argv.length != 3) {
             System.err.println("Need at least one argument");
+            return;
         }
         ExecutorService executor = Executors.newCachedThreadPool();
         IMAPFolder folder = null;
