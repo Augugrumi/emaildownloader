@@ -88,12 +88,6 @@ public class Main {
                 folder.open(Folder.READ_WRITE);
             Message[] messages = folder.getMessages();
 
-            if (messages.length != 0) {
-                System.out.println("Messages");
-            } else {
-                System.out.println("No Messages");
-            }
-
             final BlockingQueue<Message> selectedEMails = new ArrayBlockingQueue<Message>(messages.length);
             final ArrayList<Future<String>> computedStrings = new ArrayList<>(messages.length);
 
@@ -256,12 +250,11 @@ public class Main {
                 res2.append(line);
             }
 
-            System.out.println("Output from R:\n" + res2.toString());
-
-            System.out.println("DONE");
+            System.out.println("DONE. Images saved in " + argv[0]);
 
         } catch (Exception e) {
             e.printStackTrace();
+            System.err.println("FAILURE");
         }
     }
 }
