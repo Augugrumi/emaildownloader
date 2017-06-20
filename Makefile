@@ -6,4 +6,4 @@ build:
 	mvn compile
 
 compile:
-	@mvn exec:java -Dexec.mainClass="com.augugrumi.emaildownloader.Main" -Dexec.args="$(IMAGES_PATH)"
+	@mvn exec:java -Dexec.mainClass="com.augugrumi.emaildownloader.Main" -Dexec.args="$(IMAGES_PATH) $(EMAIL) $(PASSWORD)"

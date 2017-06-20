@@ -63,7 +63,7 @@ public class Main {
 
     public static void main(String[] argv) {
 
-        if (argv.length != 1) {
+        if (argv.length != 3) {
             System.err.println("Need at least one argument");
         }
         ExecutorService executor = Executors.newCachedThreadPool();
@@ -77,7 +77,7 @@ public class Main {
             Session session = Session.getDefaultInstance(prop, null);
 
             store = session.getStore("imaps");
-            store.connect("imap.googlemail.com", "", "");
+            store.connect("imap.googlemail.com", argv[1], argv[2]);
 
             folder = (IMAPFolder) store.getFolder("inbox"); // This doesn't work for other email account
             //folder = (IMAPFolder) store.getFolder("inbox"); This works for both email account
