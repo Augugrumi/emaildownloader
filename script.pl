@@ -11,6 +11,16 @@ my $google_err = 0;
 my $imagga_err = 0;
 my $watson_err = 0;
 
+my $azure_all_right = 0;
+my $google_all_right = 0;
+my $imagga_all_right = 0;
+my $watson_all_right = 0;
+
+my $azure_one_tag = 0;
+my $google_one_tag = 0;
+my $imagga_one_tag = 0;
+my $watson_one_tag = 0;
+
 my @selected;
 my @result;
 
@@ -23,22 +33,27 @@ foreach $line (@mail) {
     if (index($line, "\$SELECTED:" ) != -1) {
         @selected = split ",", $line;
         @selected[0] =~ s/\$SELECTED://g;
+        @selected = grep /\S/, @selected;
     } elsif (index($line, $google_str ) != -1) {
         @result = split ",", $line;
         @result[0] =~ s/\$GOOGLE://g;
-        ($google_m, $google_err) = check_and_augment(@result);
+        @result = grep /\S/, @result;
+        ($google_m, $google_err, $google_one_tag, $google_all_right) = check_and_augment(@result);
     } elsif (index($line, $azure_str ) != -1) {
         @result = split ",", $line;
         @result[0] =~ s/\$AZURE://g;
-        ($azure_m, $azure_err) = check_and_augment(@result);
+        @result = grep /\S/, @result;
+        ($azure_m, $azure_err, $azure_one_tag, $azure_all_right) = check_and_augment(@result);
     }  elsif (index($line, $watson_str ) != -1) {
         @result = split ",", $line;
         @result[0] =~ s/\$WATSON://g;
-        ($watson_m, $watson_err) = check_and_augment(@result);
+        @result = grep /\S/, @result;
+        ($watson_m, $watson_err, $watson_one_tag, $watson_all_right) = check_and_augment(@result);
     }  elsif (index($line, $immaga_str ) != -1) {
         @result = split ",", $line;
         @result[0] =~ s/\$IMAGGA://g;
-        ($imagga_m, $imagga_err) = check_and_augment(@result);
+        @result = grep /\S/, @result;
+        ($imagga_m, $imagga_err, $imagga_one_tag, $imagga_all_right) = check_and_augment(@result);
     }
 }
 
@@ -59,10 +74,30 @@ print ",";
 print $watson_err;
 print "\n";
 
+print $azure_one_tag;
+print ",";
+print $azure_all_right;
+print "!";
+print $google_one_tag;
+print ",";
+print $google_all_right;
+print "!";
+print $imagga_one_tag;
+print ",";
+print $imagga_all_right;
+print "!";
+print $watson_one_tag;
+print ",";
+print $watson_all_right;
+print "\n";
+
+
 sub check_and_augment {
     my @list = @_;
     my $m = 0;
     my $f = 0;
+    my $one = 0;
+    my $all = 0;
     my $temp;
     for $res (@list) {
         if ($res =~ /^[a-zA-Z]/) {
@@ -72,7 +107,6 @@ sub check_and_augment {
                     $temp = $temp + 1;
                 }
             }
-            $size = @list;
             if ($temp == 0) {
                 $f = $f +1;
             } else {
@@ -80,5 +114,14 @@ sub check_and_augment {
             }
         }
     }
-    return ($m, $f);
+    if ($m > 0) {
+        $one = 1;
+    }
+    $selected = @selected;
+    print $selected; print "\n";
+    print $m; print "\n";
+    if ($m eq $selected){
+        $all = 1;
+    }
+    return ($m, $f, $one, $all);
 }
