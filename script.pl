@@ -57,17 +57,17 @@ foreach $line (@mail) {
     }
 }
 
-print $azure_m; print ","; print $azure_err;print ",";
-print $azure_one_tag;print ",";print $azure_all_right;print "!";
+print $azure_m; print ','; print $azure_err;print ',';
+print $azure_one_tag;print ',';print $azure_all_right;print '!';
 
-print $google_m;print ",";print $google_err;print ",";
-print $google_one_tag;print ",";print $google_all_right;print "!";
+print $google_m;print ',';print $google_err;print ',';
+print $google_one_tag;print ',';print $google_all_right;print '!';
 
-print $imagga_m;print ",";print $imagga_err;print ",";
-print $imagga_one_tag;print ",";print $imagga_all_right;print "!";
+print $imagga_m;print ',';print $imagga_err;print ',';
+print $imagga_one_tag;print ',';print $imagga_all_right;print '!';
 
-print $watson_m;print ",";print $watson_err;print ",";
-print $watson_one_tag;print ",";print $watson_all_right;print "\n";
+print $watson_m;print ',';print $watson_err;print ',';
+print $watson_one_tag;print ',';print $watson_all_right;print "!\n";
 
 sub check_and_augment {
     my @list = @_;
@@ -95,9 +95,7 @@ sub check_and_augment {
         $one = 1;
     }
     $selected = @selected;
-    print $selected; print "\n";
-    print $m; print "\n";
-    if ($m eq $selected){
+    if ($f eq 0 and $m > 0){
         $all = 1;
     }
     return ($m, $f, $one, $all);
