@@ -193,6 +193,16 @@ public class Main {
             int imagga_err = 0;
             int watson_err = 0;
 
+            int  azure_one = 0;
+            int google_one = 0;
+            int imagga_one = 0;
+            int watson_one = 0;
+
+            int  azure_all = 0;
+            int google_all = 0;
+            int imagga_all = 0;
+            int watson_all = 0;
+
             int i;
             int tot = 0;
             for (String[] ss: splittedResult) {
@@ -206,18 +216,26 @@ public class Main {
                             case 0:
                                 azure_match += Integer.parseInt(m_vs_e[0]);
                                 azure_err += Integer.parseInt(m_vs_e[1]);
+                                azure_one += Integer.parseInt(m_vs_e[2]);
+                                azure_all += Integer.parseInt(m_vs_e[3]);
                                 break;
                             case 1:
                                 google_match += Integer.parseInt(m_vs_e[0]);
                                 google_err += Integer.parseInt(m_vs_e[1]);
+                                google_one += Integer.parseInt(m_vs_e[2]);
+                                google_all += Integer.parseInt(m_vs_e[3]);
                                 break;
                             case 2:
                                 imagga_match += Integer.parseInt(m_vs_e[0]);
                                 imagga_err += Integer.parseInt(m_vs_e[1]);
+                                imagga_one += Integer.parseInt(m_vs_e[2]);
+                                imagga_all += Integer.parseInt(m_vs_e[3]);
                                 break;
                             case 3:
                                 watson_match += Integer.parseInt(m_vs_e[0]);
                                 watson_err += Integer.parseInt(m_vs_e[1]);
+                                watson_one += Integer.parseInt(m_vs_e[2]);
+                                watson_all += Integer.parseInt(m_vs_e[3]);
                                 break;
                         }
                         i++;
