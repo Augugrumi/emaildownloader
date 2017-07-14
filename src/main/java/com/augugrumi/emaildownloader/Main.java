@@ -246,11 +246,11 @@ public class Main {
 
             FileWriter writer = new FileWriter("csv.csv");
 
-            CSVUtils.writeLine(writer, Arrays.asList("Service", "match", "error"), ',');
-            CSVUtils.writeLine(writer, Arrays.asList("Azure", azure_match + "", azure_err + ""), ',');
-            CSVUtils.writeLine(writer, Arrays.asList("Google", google_match + "", google_err + ""), ',');
-            CSVUtils.writeLine(writer, Arrays.asList("Imagga", imagga_match + "", imagga_err + ""), ',');
-            CSVUtils.writeLine(writer, Arrays.asList("Watson", watson_match + "", watson_err + ""), ',');
+            CSVUtils.writeLine(writer, Arrays.asList("Service", "match", "error", "at least one correct", "all correct"), ',');
+            CSVUtils.writeLine(writer, Arrays.asList("Azure", azure_match + "", azure_err + "", azure_one + "" , azure_all + ""), ',');
+            CSVUtils.writeLine(writer, Arrays.asList("Google", google_match + "", google_err + "", google_one + "" , google_all + ""), ',');
+            CSVUtils.writeLine(writer, Arrays.asList("Imagga", imagga_match + "", imagga_err + "", imagga_one + "" , imagga_all + ""), ',');
+            CSVUtils.writeLine(writer, Arrays.asList("Watson", watson_match + "", watson_err + "", watson_one + "" , watson_all + ""), ',');
 
             writer.flush();
             writer.close();
