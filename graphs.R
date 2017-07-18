@@ -29,13 +29,12 @@ g = function (dati, path) {
     f(sum(dati[,2]), sum(dati[,3]), name, sum(dati[,2:3]) + 100, path)
 }
 
-h = function(a, b, c, d, name, scale, path, filename) {
-    
+h = function(a, b, c, d, name, scale, path, filename) {     
     png(filename=sprintf("%s/%sGraph.png", path, filename))
     barplot(
         c(a, b, c, d),
         main=sprintf("%s", name),
-        col=c("cadetblue2", "firebrick2", "green3", "gold1"),
+        col=c("lightsteelblue3", "brown3", "chartreuse4", "darkgoldenrod1"),
         ylim=c(0, scale),
         names.arg=c("Azure", "Google", "Imagga", "Watson"),
         ylab="Frequency"
