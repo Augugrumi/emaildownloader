@@ -47,11 +47,11 @@ i = function(dati, path) {
     
     name="At least one match"
     filename = "AtLeastOneMatch"
-    h(dati[1,4], dati[2,4], dati[3,4], dati[4,4], name, (max(dati[,4])) + 100, path, filename)
+    h(dati[1,4], dati[2,4], dati[3,4], dati[4,4], name, 150, path, filename)
     
     name="Complete match"
     filename="CompleteMatch"
-    h(dati[1,5], dati[2,5], dati[3,5], dati[4,5], name, (max(dati[,5])) + 5, path, filename)
+    h(dati[1,5], dati[2,5], dati[3,5], dati[4,5], name, 150, path, filename)
 }
 
 args = commandArgs(trailingOnly=TRUE)
