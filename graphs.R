@@ -8,7 +8,7 @@ f = function(a, b, name, scale, path) {
         main=sprintf("%s accuracy", name),
         col=c("darkgreen", "darkred"),
         ylim=c(0, scale),
-        names.arg=c("Matches", "Errors"),
+        names.arg=c("Matches", "Mismatch"),
         ylab="Frequency"
     )
     dev.off()
