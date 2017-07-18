@@ -40,7 +40,7 @@ h = function(a, b, c, d, name, scale, path, filename) {
         names.arg=c("Azure", "Google", "Imagga", "Watson"),
         ylab="Frequency"
     )
-    text(x = xx, y = c(a,b), label = c(a,b), pos = 3, cex = 1.1)
+    text(x = xx, y = c(a,b,c,d), label = c(a,b,c,d), pos = 3, cex = 1.1)
     dev.off()
 }
 
