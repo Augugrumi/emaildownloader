@@ -91,6 +91,15 @@ public class Main {
             final BlockingQueue<Message> selectedEMails = new ArrayBlockingQueue<Message>(messages.length);
             final ArrayList<Future<String>> computedStrings = new ArrayList<>(messages.length);
 
+            int count = 0;
+
+            for (final Message m : messages){
+                if (m.getSubject() != null && m.getSubject().equalsIgnoreCase("test ghio-ca"))
+                    count++;
+            }
+
+            System.out.println("Number of calls: "+count);
+
             for (final Message m : messages) {
 
                 FutureTask<String> newJob = new FutureTask<String>(new Callable<String>() {

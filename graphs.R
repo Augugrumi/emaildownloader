@@ -3,7 +3,7 @@
 f = function(a, b, name, scale, path) {
 
     png(filename=sprintf("%s/%sGraph.png", path, name))
-    barplot(
+    xx <- barplot(
         c(a, b),
         main=sprintf("%s accuracy", name),
         col=c("darkgreen", "darkred"),
@@ -11,6 +11,7 @@ f = function(a, b, name, scale, path) {
         names.arg=c("Matches", "Mismatch"),
         ylab="Frequency"
     )
+    text(x = xx, y = c(a,b), label = c(a,b), pos = 3, cex = 1.1)
     dev.off()
 }
 
@@ -31,7 +32,7 @@ g = function (dati, path) {
 
 h = function(a, b, c, d, name, scale, path, filename) {     
     png(filename=sprintf("%s/%sGraph.png", path, filename))
-    barplot(
+    xx <- barplot(
         c(a, b, c, d),
         main=sprintf("%s", name),
         col=c("lightsteelblue3", "brown3", "chartreuse4", "darkgoldenrod1"),
@@ -39,6 +40,7 @@ h = function(a, b, c, d, name, scale, path, filename) {
         names.arg=c("Azure", "Google", "Imagga", "Watson"),
         ylab="Frequency"
     )
+    text(x = xx, y = c(a,b), label = c(a,b), pos = 3, cex = 1.1)
     dev.off()
 }
 
@@ -47,11 +49,11 @@ i = function(dati, path) {
     
     name="At least one match"
     filename = "AtLeastOneMatch"
-    h(dati[1,4], dati[2,4], dati[3,4], dati[4,4], name, (max(dati[,4])) + 100, path, filename)
+    h(dati[1,4], dati[2,4], dati[3,4], dati[4,4], name, 150, path, filename)
     
     name="Complete match"
     filename="CompleteMatch"
-    h(dati[1,5], dati[2,5], dati[3,5], dati[4,5], name, (max(dati[,5])) + 5, path, filename)
+    h(dati[1,5], dati[2,5], dati[3,5], dati[4,5], name, 150, path, filename)
 }
 
 args = commandArgs(trailingOnly=TRUE)
