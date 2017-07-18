@@ -5,4 +5,4 @@ jdk:
 - openjdk7
 sudo: false
 script:
-- make compile
+- make travis
