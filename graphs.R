@@ -10,8 +10,8 @@ f = function(a, b, name, scale, path) {
         ylim=c(0, scale),
         names.arg=c("Matches", "Mismatch"),
         ylab="Frequency",
-	cex.axis=1.5,
-	cex.names=1.5,
+	cex.axis=2,
+	cex.names=2,
 	cex.main=2
     )
     text(x = xx, y = c(a,b), label = c(a,b), pos = 3, cex = 2)
@@ -42,8 +42,8 @@ h = function(a, b, c, d, name, scale, path, filename) {
         ylim=c(0, scale),
         names.arg=c("Azure", "Google", "Imagga", "Watson"),
         ylab="Frequency",
-	cex.axis=1.5,
-	cex.names=1.5,
+	cex.axis=2,
+	cex.names=2,
 	cex.main=2
     )
     text(x = xx, y = c(a,b,c,d), label = c(a,b,c,d), pos = 3, cex = 2)
