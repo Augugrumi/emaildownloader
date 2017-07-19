@@ -98,7 +98,7 @@ public class Main {
                     count++;
             }
 
-            System.out.println("Number of calls: "+count);
+            System.out.println("Number of emails: "+count);
 
             for (final Message m : messages) {
 
