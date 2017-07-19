@@ -9,9 +9,11 @@ f = function(a, b, name, scale, path) {
         col=c("darkgreen", "darkred"),
         ylim=c(0, scale),
         names.arg=c("Matches", "Mismatch"),
-        ylab="Frequency"
+        ylab="Frequency",
+        cex=1.5,
+        cex.main=2
     )
-    text(x = xx, y = c(a,b), label = c(a,b), pos = 3, cex = 1.1)
+    text(x = xx, y = c(a,b), label = c(a,b), pos = 3, cex = 1.5)
     dev.off()
 }
 
@@ -38,9 +40,11 @@ h = function(a, b, c, d, name, scale, path, filename) {
         col=c("lightsteelblue3", "brown3", "chartreuse4", "darkgoldenrod1"),
         ylim=c(0, scale),
         names.arg=c("Azure", "Google", "Imagga", "Watson"),
-        ylab="Frequency"
+        ylab="Frequency",
+        cex=1.5,
+        cex.main=2
     )
-    text(x = xx, y = c(a,b,c,d), label = c(a,b,c,d), pos = 3, cex = 1.1)
+    text(x = xx, y = c(a,b,c,d), label = c(a,b,c,d), pos = 3, cex = 1.5)
     dev.off()
 }
 
